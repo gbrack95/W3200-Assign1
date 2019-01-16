@@ -20,8 +20,16 @@ p {
 }
 
 #button {
-    margin: auto;
+    margin: 10px auto 10px auto;
+    padding: 8px 15px 8px 15px;
     display: block;
+    border: 1px solid black;
+    border-radius: 6px;
     text-align: center;
-    width: 15%;
+    background-color: red;
+}
+
+#button:hover {
+    background-color: gray;
+    cursor: pointer;
 }
