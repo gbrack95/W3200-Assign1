@@ -26,7 +26,8 @@ p {
 }
 
 .button {
-    margin: 10px auto 10px auto;
+    margin: 10px 5px;
+    width: 75px;
     padding: 8px 15px 8px 15px;
     display: inline-block;
     border: 1px solid black;
