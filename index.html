@@ -3,17 +3,19 @@
     <head>
         <meta charset="utf-8">
         <link rel="stylesheet" href="style.css">
-        <title>Dine Out Decider</title>
+        <title>Date Night</title>
     </head>
     <body>
         <div class="wrapper">
-            <h1 id="title">The Dine Out Decider</h1>
+            <h1 id="title">Date Night Fun</h1>
             <p>
-                Welcome to the Dine Out Decider, to get started enter the number of people in your party and click The Options!
+                Welcome! I will help you decide what to do on your date tonight! To get started let me know if you want to do an activity, get some food or both!
             </p>
-            <label for="num-party">Number in party</label>
-            <input id="num-party" name="num-party">
-            <button id="button">The Options</button>
+            <div id="button-container">
+                <button id="activity-button" class="button">Activity</button>
+                <button id="food-button" class="button">Food</button>
+                <button id="both-button" class="button">Both</button>
+            </div>
         </div>
         <script src="app.js"></script>
     </body>

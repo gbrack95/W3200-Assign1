@@ -19,17 +19,23 @@ p {
     max-width: 50%;
 }
 
-#button {
+#button-container {
+    margin: auto;
+    display: block;
+    text-align: center;
+}
+
+.button {
     margin: 10px auto 10px auto;
     padding: 8px 15px 8px 15px;
-    display: block;
+    display: inline-block;
     border: 1px solid black;
     border-radius: 6px;
     text-align: center;
     background-color: red;
 }
 
-#button:hover {
+.button:hover {
     background-color: gray;
     cursor: pointer;
 }
