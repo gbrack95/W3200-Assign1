@@ -19,10 +19,35 @@ p {
     max-width: 50%;
 }
 
-#button-container {
+#act-button-container {
     margin: auto;
     display: block;
     text-align: center;
+}
+
+#cost-button-container {
+    margin: auto;
+    display: none;
+    text-align: center;
+}
+
+#low {
+    background-color: green;
+}
+
+#medium {
+    background-color: yellow;
+}
+
+#high {
+    background-color: red;
+}
+
+#low:hover,
+#medium:hover,
+#high:hover {
+    background-color: gray;
+    cursor: pointer;
 }
 
 .button {
