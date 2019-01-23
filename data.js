@@ -1,4 +1,4 @@
-var activity = [{
+var activity = [{ // 6-low, 4-medium, 4-high
     act: "Mini-Golf",
     cost: "Medium"
 }, {
@@ -34,11 +34,17 @@ var activity = [{
 }, {
     act: "Museum",
     cost: "Medium"
+}, {
+    act: "Visit Historical Site",
+    cost: "Low"
+}, {
+    act: "Make Pottery",
+    cost: "High"
 }];
 
 
 
-var food = [{
+var food = [{ // 5-low, 5-medium, 5-high
     name: "Grocery Store Sushi",
     cost: "High"
 }, {
@@ -74,5 +80,13 @@ var food = [{
 }, {
     name: "El Coyote Charro",
     cost: "Medium"
-}
+}, {
+    name: "Pancho and Leftys",
+    cost: "High"
+}, {
+    name: "Wendys",
+    cost: "Low"
+}, {
+    name: "In-N-Out",
+    cost: "Low"
 }];
