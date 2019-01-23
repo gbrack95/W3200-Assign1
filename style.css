@@ -31,21 +31,21 @@ p {
     text-align: center;
 }
 
-#low {
+#low-button {
     background-color: green;
 }
 
-#medium {
+#medium-button {
     background-color: yellow;
 }
 
-#high {
+#high-button {
     background-color: red;
 }
 
-#low:hover,
-#medium:hover,
-#high:hover {
+#low-button:hover,
+#medium-button:hover,
+#high-button:hover {
     background-color: gray;
     cursor: pointer;
 }

@@ -4,9 +4,9 @@ var bothButton = document.querySelector("#both-button");
 
 var costOption = document.querySelector("#cost-button-container");
 
-var lowCost = document.querySelector("#low");
-var mediumCost = document.querySelector("#medium");
-var highCost = document.querySelector("#high");
+var lowButton = document.querySelector("#low-button");
+var mediumButton = document.querySelector("#medium-button");
+var highButton = document.querySelector("#high-button");
 
 activityButton.onclick = function () {
     console.log("the activity button is", activityButton);
@@ -24,4 +24,16 @@ bothButton.onclick = function () {
     console.log("the both button is", bothButton);
     costOption.style.display = "block";
     console.log("display change on both");
+}
+
+lowButton.onclick = function () {
+    console.log("the low button is", lowButton);
+}
+
+mediumButton.onclick = function () {
+    console.log("the medium button is", mediumButton);
+}
+
+highButton.onclick = function () {
+    console.log("the high button is", highButton);
 }
