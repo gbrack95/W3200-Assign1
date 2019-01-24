@@ -1,6 +1,11 @@
 fetch("https://api.myjson.com/bins/1ch97g").then(function (response) {
     response.json().then(function (data){
         console.log("data loaded from server", data);
+        console.log("activity data", data.activity);
+        console.log("food data", data.food);
+        console.log("Mini-Golf data", data.activity[0]);
+        console.log("Mini-Golf act", data.activity[0].act);
+        console.log("Mini-Golf cost", data.activity[0].cost);
     });
 });
 
