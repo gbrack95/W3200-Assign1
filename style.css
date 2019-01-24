@@ -31,6 +31,20 @@ p {
     text-align: center;
 }
 
+#date-response {
+    margin: auto;
+    display: block;
+    text-align: center;
+}
+
+#generated-options {
+    margin: auto;
+    padding: 0;
+    display: block;
+    text-align: center;
+    list-style-type: none;
+}
+
 #low-button {
     background-color: green;
 }

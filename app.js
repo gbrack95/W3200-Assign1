@@ -1,20 +1,22 @@
 var activityData = [];
 var foodData = [];
-var bothData = [];
-
+var eitherData = [];
 var currentData = [];
 
-fetch("https://api.myjson.com/bins/1ch97g").then(function (response) {
-    response.json().then(function (data){
-        activityData = data.activity;
-        foodData = data.food;
-        bothData = activityData.concat(foodData);
-        // console.log("Mini-Golf data", activityData[0]);
-        // console.log("Mini-Golf act", activityData[0].act);
-        // console.log("Mini-Golf cost", activityData[0].cost);
-        return activityData, foodData, bothData;
-    });
-});
+var activityButton = document.querySelector("#activity-button");
+var foodButton = document.querySelector("#food-button");
+var eitherButton = document.querySelector("#either-button");
+
+var costOption = document.querySelector("#cost-button-container")
+
+var lowButton = document.querySelector("#low-button");
+var mediumButton = document.querySelector("#medium-button");
+var highButton = document.querySelector("#high-button");
+
+var optionsList = document.querySelector("#generated-options");
+
+var chosenOption = document.querySelector("#chosen-option");
+
 
 var filterData = function (list, cost) {
     return list.filter(function (item) {
@@ -22,51 +24,63 @@ var filterData = function (list, cost) {
     });
 };
 
-var activityButton = document.querySelector("#activity-button");
-var foodButton = document.querySelector("#food-button");
-var bothButton = document.querySelector("#both-button");
-
-var costOption = document.querySelector("#cost-button-container");
-
-var lowButton = document.querySelector("#low-button");
-var mediumButton = document.querySelector("#medium-button");
-var highButton = document.querySelector("#high-button");
+fetch("https://api.myjson.com/bins/1ch97g").then(function (response) {
+    response.json().then(function (data){
+        activityData = data.activity;
+        foodData = data.food;
+        eitherData = activityData.concat(foodData);
+        // console.log("Mini-Golf data", activityData[0]);
+        // console.log("Mini-Golf act", activityData[0].act);
+        // console.log("Mini-Golf cost", activityData[0].cost);
+        return activityData, foodData, eitherData;
+    });
+});
 
 activityButton.onclick = function () {
-    console.log("the activity button is", activityButton);
     costOption.style.display = "block";
-    console.log("display change on activity");
     console.log("activity data", activityData);
     currentData = activityData;
 }
 
 foodButton.onclick = function () {
-    console.log("the food button is", foodButton);
     costOption.style.display = "block";
-    console.log("display change on food");
     console.log("food data", foodData);
+    currentData = foodData;
 }
 
-bothButton.onclick = function () {
-    console.log("the both button is", bothButton);
+eitherButton.onclick = function () {
     costOption.style.display = "block";
-    console.log("display change on both");
-    console.log("data loaded from server", bothData);
+    console.log("data loaded from server", eitherData);
+    currentData = eitherData;
 }
 
 lowButton.onclick = function () {
-    console.log("the low button is", lowButton);
-    console.log("Mini-Golf cost", activityData[0].cost);
     var filteredList = filterData(currentData, "Low");
-    console.log("filtered", filteredList);
+    console.log("Low filtered", filteredList);
     var r = Math.floor(Math.random() * filteredList.length);
-    console.log("random", filteredList[r]);
+    console.log("Low random", filteredList[r]);
+    /*newItem.innerHTML = filteredList[r].act;
+    optionsList.appendChild(newItem);
+    console.log(optionsList);*/
+    
+    filteredList.forEach(function(item){
+        var newItem = document.createElement("li");
+        newItem.innerHTML = item.act;
+        optionsList.appendChild(newItem);
+        console.log(optionsList);
+    });
 }
 
 mediumButton.onclick = function () {
-    console.log("the medium button is", mediumButton);
+    var filteredList = filterData(currentData, "Medium");
+    console.log("Medium filtered", filteredList);
+    var r = Math.floor(Math.random() * filteredList.length);
+    console.log("Medium random", filteredList[r]);
 }
 
 highButton.onclick = function () {
-    console.log("the high button is", highButton);
+    var filteredList = filterData(currentData, "High");
+    console.log("High filtered", filteredList);
+    var r = Math.floor(Math.random() * filteredList.length);
+    console.log("High random", filteredList[r]);
 }
