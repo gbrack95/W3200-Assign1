@@ -1,3 +1,9 @@
+fetch("https://api.myjson.com/bins/1ch97g").then(function (response) {
+    response.json().then(function (data){
+        console.log("data loaded from server", data);
+    });
+});
+
 var activityButton = document.querySelector("#activity-button");
 var foodButton = document.querySelector("#food-button");
 var bothButton = document.querySelector("#both-button");
