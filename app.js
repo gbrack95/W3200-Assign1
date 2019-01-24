@@ -59,10 +59,6 @@ lowButton.onclick = function () {
     console.log("Low filtered", filteredList);
     var r = Math.floor(Math.random() * filteredList.length);
     console.log("Low random", filteredList[r]);
-    /*newItem.innerHTML = filteredList[r].act;
-    optionsList.appendChild(newItem);
-    console.log(optionsList);*/
-    
     filteredList.forEach(function(item){
         var newItem = document.createElement("li");
         newItem.innerHTML = item.act;
