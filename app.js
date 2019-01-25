@@ -38,6 +38,7 @@ var filterData = function (list, cost) {
 var deleteLi = function () {
     var delLi = document.querySelector("#generated-options");
     var delChosen = document.querySelector("#chosen-option");
+    allOptions.style.display = "none";
     if (delChosen.firstChild) {
         delChosen.firstChild.remove();
     }
@@ -73,18 +74,21 @@ activityButton.onclick = function () {
     costOption.style.display = "block";
     console.log("activity data", activityData);
     currentData = activityData;
+    deleteLi();
 }
 
 foodButton.onclick = function () {
     costOption.style.display = "block";
     console.log("food data", foodData);
     currentData = foodData;
+    deleteLi();
 }
 
 eitherButton.onclick = function () {
     costOption.style.display = "block";
     console.log("data loaded from server", eitherData);
     currentData = eitherData;
+    deleteLi();
 }
 
 lowButton.onclick = function () {
