@@ -17,13 +17,6 @@ var allOptions = document.querySelector("#all-options")
 var optionsList = document.querySelector("#generated-options");
 var chosenOption = document.querySelector("#chosen-option");
 
-
-var filterData = function (list, cost) {
-    return list.filter(function (item) {
-        return item.cost == cost;
-    });
-};
-
 fetch("https://api.myjson.com/bins/1ch97g").then(function (response) {
     response.json().then(function (data){
         activityData = data.activity;
@@ -36,23 +29,11 @@ fetch("https://api.myjson.com/bins/1ch97g").then(function (response) {
     });
 });
 
-activityButton.onclick = function () {
-    costOption.style.display = "block";
-    console.log("activity data", activityData);
-    currentData = activityData;
-}
-
-foodButton.onclick = function () {
-    costOption.style.display = "block";
-    console.log("food data", foodData);
-    currentData = foodData;
-}
-
-eitherButton.onclick = function () {
-    costOption.style.display = "block";
-    console.log("data loaded from server", eitherData);
-    currentData = eitherData;
-}
+var filterData = function (list, cost) {
+    return list.filter(function (item) {
+        return item.cost == cost;
+    });
+};
 
 var deleteLi = function () {
     var delLi = document.querySelector("#generated-options");
@@ -87,6 +68,24 @@ var createPar = function (item) {
     }
     chosenOption.appendChild(newItem);
 };
+
+activityButton.onclick = function () {
+    costOption.style.display = "block";
+    console.log("activity data", activityData);
+    currentData = activityData;
+}
+
+foodButton.onclick = function () {
+    costOption.style.display = "block";
+    console.log("food data", foodData);
+    currentData = foodData;
+}
+
+eitherButton.onclick = function () {
+    costOption.style.display = "block";
+    console.log("data loaded from server", eitherData);
+    currentData = eitherData;
+}
 
 lowButton.onclick = function () {
     deleteLi();
