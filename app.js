@@ -13,8 +13,8 @@ var lowButton = document.querySelector("#low-button");
 var mediumButton = document.querySelector("#medium-button");
 var highButton = document.querySelector("#high-button");
 
+var allOptions = document.querySelector("#all-options")
 var optionsList = document.querySelector("#generated-options");
-
 var chosenOption = document.querySelector("#chosen-option");
 
 
@@ -54,29 +54,67 @@ eitherButton.onclick = function () {
     currentData = eitherData;
 }
 
-lowButton.onclick = function () {
-    var filteredList = filterData(currentData, "Low");
-    console.log("Low filtered", filteredList);
-    var r = Math.floor(Math.random() * filteredList.length);
-    console.log("Low random", filteredList[r]);
-    filteredList.forEach(function(item){
+var deleteLi = function () {
+    var delLi = document.querySelector("#generated-options");
+    var delChosen = document.querySelector("#chosen-option");
+    if (delChosen.firstChild) {
+        delChosen.firstChild.remove();
+    }
+    while (delLi.hasChildNodes()) {
+        delLi.removeChild(delLi.firstChild);
+    }
+};
+
+var listLoop = function (list) {
+    list.forEach(function(item){
         var newItem = document.createElement("li");
-        newItem.innerHTML = item.act;
+        if (item.act) {
+            newItem.innerHTML = item.act;
+        } else {
+            newItem.innerHTML = item.name;
+        }
         optionsList.appendChild(newItem);
         console.log(optionsList);
     });
+};
+
+var createPar = function (item) {
+    var newItem = document.createElement("p");
+    if (item.act) {
+        newItem.innerHTML = "Based on your choices you should do: " + item.act;
+    } else {
+        newItem.innerHTML = "Based on your choices you should eat: " + item.name;
+    }
+    chosenOption.appendChild(newItem);
+};
+
+lowButton.onclick = function () {
+    deleteLi();
+    var filteredList = filterData(currentData, "Low");
+    var r = Math.floor(Math.random() * filteredList.length)
+    createPar(filteredList[r]);
+    allOptions.style.display = "block";
+    listLoop(filteredList);
 }
 
 mediumButton.onclick = function () {
+    deleteLi();
     var filteredList = filterData(currentData, "Medium");
     console.log("Medium filtered", filteredList);
     var r = Math.floor(Math.random() * filteredList.length);
+    createPar(filteredList[r]);
     console.log("Medium random", filteredList[r]);
+    allOptions.style.display = "block";
+    listLoop(filteredList);
 }
 
 highButton.onclick = function () {
+    deleteLi();
     var filteredList = filterData(currentData, "High");
     console.log("High filtered", filteredList);
     var r = Math.floor(Math.random() * filteredList.length);
+    createPar(filteredList[r]);
     console.log("High random", filteredList[r]);
+    allOptions.style.display = "block";
+    listLoop(filteredList);
 }

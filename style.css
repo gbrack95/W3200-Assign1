@@ -31,7 +31,13 @@ p {
     text-align: center;
 }
 
-#date-response {
+#all-options {
+    margin: auto;
+    display: none;
+    text-align: center;
+}
+
+#data-response {
     margin: auto;
     display: block;
     text-align: center;
