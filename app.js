@@ -22,9 +22,6 @@ fetch("https://api.myjson.com/bins/1ch97g").then(function (response) {
         activityData = data.activity;
         foodData = data.food;
         eitherData = activityData.concat(foodData);
-        // console.log("Mini-Golf data", activityData[0]);
-        // console.log("Mini-Golf act", activityData[0].act);
-        // console.log("Mini-Golf cost", activityData[0].cost);
         return activityData, foodData, eitherData;
     });
 });
