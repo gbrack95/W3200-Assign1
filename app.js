@@ -56,7 +56,6 @@ var listLoop = function (list) {
             newItem.innerHTML = item.name;
         }
         optionsList.appendChild(newItem);
-        console.log(optionsList);
     });
 };
 
@@ -72,21 +71,18 @@ var createPar = function (item) {
 
 activityButton.onclick = function () {
     costOption.style.display = "block";
-    console.log("activity data", activityData);
     currentData = activityData;
     deleteLi();
 }
 
 foodButton.onclick = function () {
     costOption.style.display = "block";
-    console.log("food data", foodData);
     currentData = foodData;
     deleteLi();
 }
 
 eitherButton.onclick = function () {
     costOption.style.display = "block";
-    console.log("data loaded from server", eitherData);
     currentData = eitherData;
     deleteLi();
 }
